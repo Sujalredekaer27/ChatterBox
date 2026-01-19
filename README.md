@@ -38,7 +38,7 @@ The app follows a strict **MVC (Model-View-Controller)** pattern to ensure the c
 | **GET** | `/chats` | **Index:** View the vibrant new chat dashboard |
 | **GET** | `/chats/new` | **New:** Form to compose a message |
 | **POST** | `/chats` | **Create:** Push a new message to MongoDB |
-| **GET** | `/chats/:id/edit` | **Edit:** Refined form to modify a message |
+| **GET** | `/chats/:id/edit` | **Edit:** Refined form to modify a messages |
 | **PATCH** | `/chats/:id` | **Update:** Apply changes to a specific chat |
 | **DELETE** | `/chats/:id** | **Destroy:** Permanently remove a chat |
 
