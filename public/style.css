@@ -1,36 +1,108 @@
-.container{
-    width: 600px;
-    margin: auto;
-    background-color: rgb(248, 248, 224);
-    padding: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.chat{
-    background-color: aliceblue;
-    width: 90%;
-    padding: 4px 10px;
-    margin: auto;
-    border-radius: 4px;
+
+body {
+    background-color: #e5ddd5; /* Classic WhatsApp Background */
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
 }
-.msg{
-    background-color: dodgerblue;
-    color: aliceblue;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 4px;
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.msg p{
-    padding: 6px;
+
+h2, h3 {
+    text-align: center;
+    color: #075e54;
+    margin-bottom: 20px;
 }
-.btn{
-    padding: 10px;
-    background-color: rgb(183, 60, 255);
-    color: aliceblue;
+
+/* Chat Card */
+.chat {
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.chat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Message Bubble */
+.msg-box {
+    background-color: #dcf8c6;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-style: italic;
+    color: #333;
+}
+
+/* Forms & Inputs */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 6px;
+    font-family: inherit;
+    outline: none;
 }
-.btn2{
-    padding: 4px 10px;
-    background-color: rgb(183, 60, 255);
-    color: aliceblue;
+
+input:focus, textarea:focus {
+    border-color: #25d366;
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #25d366;
+    color: white;
+    border: none;
     border-radius: 6px;
-    margin-bottom: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-group form {
+    flex: 1;
+}
+
+.btn-edit { background-color: #34b7f1; }
+.btn-delete { background-color: #ef5350; }
+
+.btn:hover { opacity: 0.9; }
+
+/* Date/Time */
+.timestamp {
+    display: block;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 5px;
 }
