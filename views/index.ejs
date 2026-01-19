@@ -10,30 +10,36 @@
 
 <body>
     <div class="container">
-        <center>
-            <h2>All Chats</h2>
-            <form method="GET" action="/chats/new">
-                <button class="btn">New Chat</button>
-            </form>
-        </center>
+        <h2>All Chats</h2>
+        <a href="/chats/new" style="text-decoration: none;">
+            <button class="btn" style="margin-bottom: 20px;">+ New Message</button>
+        </a>
+
         <% for(let chat of chats){ %>
-        <div class="chat">
-            <p>From : <i><b><%= chat.from %></b></i></p>
-            <div class="msg">
-                <p>Message : <i><%= chat.msg %></i></p>
-                <form method="GET" action="/chats/<%=chat._id%>/edit">
-                    <button class="btn2">Edit</button>
-                </form>
-                <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
-                <button class="btn2">Delete</button>
-            </form>
+            <div class="chat">
+                <p><b>From: </b><i><%= chat.from %></i> <br> <b>To: </b><i><%= chat.to %></i>
+                </p>
+
+                <div class="msg-box">
+                    <p>
+                        <%= chat.msg %>
+                    </p>
+                </div>
+
+                <div class="btn-group">
+                    <form method="GET" action="/chats/<%=chat._id%>/edit">
+                        <button class="btn btn-edit">Edit</button>
+                    </form>
+                    <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                        <button class="btn btn-delete">Delete</button>
+                    </form>
+                </div>
+
+                <span class="timestamp">
+                    <%= chat.created_at.toString().split(" ").slice(0,4).join(" ") %> at 
+                    <%= chat.created_at.toString().split(" ")[4] %>
+                </span>
             </div>
-            <p>To : <i><b><%= chat.to %></b></i></p>
-            <hr>
-            <p><i><%= chat.created_at.toString().split(" ")[4] %></i><br>
-            <i><%= chat.created_at.toString().split(" ").slice(0,4).join(" ") %></i></p>
-        </div>
-        <hr>
         <% } %>
     </div>
 </body>
