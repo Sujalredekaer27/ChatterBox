@@ -58,14 +58,14 @@ ChatterBox/
 └── init.js              # Database Seeder script
 ```
 
-# 1. Clone & Install
+## 1. Clone & Install
 git clone [https://github.com/Sujalredekaer27/ChatterBox.git](https://github.com/Sujalredekaer27/ChatterBox.git)
 cd ChatterBox
 npm install
 
-# 2. Database
-# Ensure MongoDB is running locally on port 27017
+## 2. Database
+Ensure MongoDB is running locally on port 27017
 
-# 3. Seed & Start
+## 3. Seed & Start
 node init.js
 node index.js
