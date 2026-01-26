@@ -33,6 +33,9 @@
                     <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
                         <button class="btn btn-delete">Delete</button>
                     </form>
+                    <form method="GET" action="/chats/<%= chat._id %>">
+                        <button class="btn btn-delete">SHOW</button>
+                    </form>
                 </div>
 
                 <span class="timestamp">
