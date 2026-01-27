@@ -95,6 +95,19 @@ app.get("/", (req, res) => {
     res.send("root is working");
 });
 
+const handleValidationError = (err) => {
+    console.log("This Was A validation Error. Please Follow Rules")
+    return err;
+}
+app.use((err,req,res,next) => {
+    console.log(err.name)
+    if (err.name === "ValidationError"){
+        err = handleValidationError(err)
+    }
+    next(err);
+})
+
+//Error Handing Middle Ware
 app.use((err, req, res, next) => {
     console.log(err.name)
     let { status = 500, message = "some error occurred" } = err;
